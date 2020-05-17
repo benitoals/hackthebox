@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sun May 17 16:03:53 2020 as: nmap -sC -sV -O -p- -oA full 10.10.10.4 -->
+<nmaprun scanner="nmap" args="nmap -sC -sV -O -p- -oA full 10.10.10.4" start="1589742233" startstr="Sun May 17 16:03:53 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>

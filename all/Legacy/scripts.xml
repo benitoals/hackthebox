@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sun May 17 16:09:24 2020 as: nmap -v -oA scripts -script smb-vuln* -p 139,445 10.10.10.4 -->
+<nmaprun scanner="nmap" args="nmap -v -oA scripts -script smb-vuln* -p 139,445 10.10.10.4" start="1589742564" startstr="Sun May 17 16:09:24 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="139,445"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1589742564"/>
+<taskend task="NSE" time="1589742564"/>
+<taskbegin task="Ping Scan" time="1589742564"/>
+<taskend task="Ping Scan" time="1589742564" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1589742564"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1589742564"/>
+<taskbegin task="SYN Stealth Scan" time="1589742564"/>
+<taskend task="SYN Stealth Scan" time="1589742567" extrainfo="2 total ports"/>
+<taskbegin task="NSE" time="1589742567"/>
+<taskend task="NSE" time="1589742567"/>
+<host starttime="1589742564" endtime="1589742567"><status state="up" reason="echo-reply" reason_ttl="127"/>
+<address addr="10.10.10.4" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="139"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="netbios-ssn" method="table" conf="3"/></port>
+<port protocol="tcp" portid="445"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+</ports>
+<times srtt="136749" rttvar="136749" to="683745"/>
+</host>
+<taskbegin task="NSE" time="1589742567"/>
+<taskend task="NSE" time="1589742567"/>
+<runstats><finished time="1589742567" timestr="Sun May 17 16:09:27 2020" elapsed="3.08" summary="Nmap done at Sun May 17 16:09:27 2020; 1 IP address (1 host up) scanned in 3.08 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

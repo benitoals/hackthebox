@@ -1,0 +1,5 @@
+# Nmap 7.80 scan initiated Sun May 17 16:09:24 2020 as: nmap -v -oA scripts -script smb-vuln* -p 139,445 10.10.10.4
+# Ports scanned: TCP(2;139,445) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.4 ()	Status: Up
+Host: 10.10.10.4 ()	Ports: 139/filtered/tcp//netbios-ssn///, 445/filtered/tcp//microsoft-ds///
+# Nmap done at Sun May 17 16:09:27 2020 -- 1 IP address (1 host up) scanned in 3.08 seconds

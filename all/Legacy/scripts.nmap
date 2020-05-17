@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Sun May 17 16:09:24 2020 as: nmap -v -oA scripts -script smb-vuln* -p 139,445 10.10.10.4
+Nmap scan report for 10.10.10.4
+Host is up (0.14s latency).
+
+PORT    STATE    SERVICE
+139/tcp filtered netbios-ssn
+445/tcp filtered microsoft-ds
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sun May 17 16:09:27 2020 -- 1 IP address (1 host up) scanned in 3.08 seconds
