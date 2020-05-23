@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Sat May 23 15:14:55 2020 as: nmap -sC -sV -O -oA initial 10.10.10.76
+Nmap scan report for 10.10.10.76
+Host is up (0.13s latency).
+Not shown: 967 closed ports, 31 filtered ports
+PORT    STATE SERVICE  VERSION
+79/tcp  open  finger   Sun Solaris fingerd
+|_finger: ERROR: Script execution failed (use -d to debug)
+111/tcp open  rpcbind?
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=5/23%OT=79%CT=1%CU=32410%PV=Y%DS=2%DC=I%G=Y%TM=5EC9689
+OS:D%P=x86_64-pc-linux-gnu)SEQ(CI=I)SEQ(SP=98%GCD=1%ISR=A5%TI=I%CI=I%II=I%S
+OS:S=S%TS=7)SEQ(SP=98%GCD=1%ISR=A4%TI=I%CI=I%TS=7)OPS(O1=NNT11M54DNW0NNS%O2
+OS:=NNT11M54DNW0NNS%O3=NNT11M54DNW0%O4=NNT11M54DNW0NNS%O5=NNT11M54DNW0NNS%O
+OS:6=NNT11M54DNNS)WIN(W1=C265%W2=C265%W3=C1CC%W4=C068%W5=C068%W6=C0B7)ECN(R
+OS:=Y%DF=Y%T=3C%W=C421%O=M54DNW0NNS%CC=Y%Q=)T1(R=Y%DF=Y%T=3C%S=O%A=S+%F=AS%
+OS:RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y
+OS:%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R
+OS:%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=Y%T=FF%IPL=70%UN=0%RIPL=G%RID=G%RIPCK=G%RUC
+OS:K=G%RUD=G)IE(R=Y%DFI=Y%T=FF%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Solaris; CPE: cpe:/o:sun:sunos
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May 23 15:17:01 2020 -- 1 IP address (1 host up) scanned in 125.61 seconds
