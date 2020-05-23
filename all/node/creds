@@ -1,0 +1,7 @@
+dffc504aa55359b9265cbebe1e4032fe600b64475ae3fd29c07d23223334d0af	sha256	myP14ceAdm1nAcc0uNT:manchester
+f0e2e750791171b0391b682ec35835bd6a5c3f7c8d1d0191451ec77b4d75f240	sha256	tom:spongebob
+de5a1adf4fedcce1533915edc60177547f1057b61b7119fd130e1f7428705f73	sha256	mark:snowflake
+
+
+const url         = 'mongodb://mark:5AYRft73VtFpc84k@localhost:27017/myplace?authMechanism=DEFAULT&authSource=myplace';
+const backup_key  = '45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474';
