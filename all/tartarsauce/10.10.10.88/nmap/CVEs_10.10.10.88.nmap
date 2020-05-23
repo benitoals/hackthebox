@@ -1,0 +1,17 @@
+# Nmap 7.80 scan initiated Sat May 23 18:19:00 2020 as: nmap -Pn -sV --script vulners --script-args mincvss=7.0 -p80 -oN nmap/CVEs_10.10.10.88.nmap 10.10.10.88
+Nmap scan report for 10.10.10.88
+Host is up (0.15s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.18: 
+|     	CVE-2017-7679	7.5	https://vulners.com/cve/CVE-2017-7679
+|     	CVE-2017-7668	7.5	https://vulners.com/cve/CVE-2017-7668
+|     	CVE-2017-3169	7.5	https://vulners.com/cve/CVE-2017-3169
+|     	CVE-2017-3167	7.5	https://vulners.com/cve/CVE-2017-3167
+|_    	CVE-2019-0211	7.2	https://vulners.com/cve/CVE-2019-0211
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May 23 18:19:21 2020 -- 1 IP address (1 host up) scanned in 20.98 seconds
