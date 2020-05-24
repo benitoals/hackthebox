@@ -1,0 +1,13 @@
+# Nmap 7.80 scan initiated Sat May 23 19:38:46 2020 as: nmap -Pn -sCV -p6697,8067,59710,65534 -oN nmap/Full_10.10.10.117.nmap 10.10.10.117
+Nmap scan report for 10.10.10.117
+Host is up (0.14s latency).
+
+PORT      STATE SERVICE VERSION
+6697/tcp  open  irc     UnrealIRCd
+8067/tcp  open  irc     UnrealIRCd
+59710/tcp open  status  1 (RPC #100024)
+65534/tcp open  irc     UnrealIRCd
+Service Info: Host: irked.htb
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May 23 19:40:11 2020 -- 1 IP address (1 host up) scanned in 84.75 seconds
