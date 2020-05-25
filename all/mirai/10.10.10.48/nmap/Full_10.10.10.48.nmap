@@ -1,0 +1,15 @@
+# Nmap 7.80 scan initiated Mon May 25 17:19:47 2020 as: nmap -Pn -sCV -p32400,32469 -oN nmap/Full_10.10.10.48.nmap 10.10.10.48
+Nmap scan report for 10.10.10.48
+Host is up (0.15s latency).
+
+PORT      STATE SERVICE VERSION
+32400/tcp open  http    Plex Media Server httpd
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Server returned status 401 but no WWW-Authenticate header.
+|_http-cors: HEAD GET POST PUT DELETE OPTIONS
+|_http-title: Unauthorized
+32469/tcp open  upnp    Platinum UPnP 1.0.5.13 (UPnP/1.0 DLNADOC/1.50)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 17:20:14 2020 -- 1 IP address (1 host up) scanned in 27.19 seconds

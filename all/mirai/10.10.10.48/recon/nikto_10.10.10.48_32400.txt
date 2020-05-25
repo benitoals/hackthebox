@@ -1,0 +1,18 @@
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.10.10.48
++ Target Hostname:    10.10.10.48
++ Target Port:        32400
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /C=US/ST=CA/L=Los Gatos/O=Plex, Inc./CN=*.78063b2b367a4a389895262d75b0b03c.plex.direct
+                   Ciphers:  ECDHE-RSA-AES128-GCM-SHA256
+                   Issuer:   /C=US/O=Plex, Inc./CN=Plex Devices High Assurance CA2
++ Start Time:         2020-05-25 17:46:48 (GMT-3)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ Uncommon header 'x-plex-protocol' found, with contents: 1.0
++ The site uses SSL and the Strict-Transport-Security HTTP header is not defined.
++ The site uses SSL and Expect-CT header is not present.
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type

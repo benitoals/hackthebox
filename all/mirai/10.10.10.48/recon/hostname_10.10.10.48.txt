@@ -1,0 +1,6 @@
+Using domain server:
+Name: 10.10.10.48
+Address: 10.10.10.48#53
+Aliases: 
+
+Host 48.10.10.10.in-addr.arpa. not found: 3(NXDOMAIN)

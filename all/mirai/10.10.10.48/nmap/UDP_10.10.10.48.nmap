@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon May 25 17:10:49 2020 as: nmap -Pn -sCVU --script vulners --script-args mincvss=7.0 -p123,5353 -oN nmap/UDP_10.10.10.48.nmap 10.10.10.48
+Nmap scan report for 10.10.10.48
+Host is up (0.14s latency).
+
+PORT     STATE SERVICE VERSION
+123/udp  open  ntp     NTP v4 (unsynchronized)
+5353/udp open  mdns    DNS-based service discovery
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 17:11:08 2020 -- 1 IP address (1 host up) scanned in 19.24 seconds

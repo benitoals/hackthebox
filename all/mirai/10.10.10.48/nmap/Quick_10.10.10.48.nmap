@@ -1,0 +1,11 @@
+# Nmap 7.80 scan initiated Mon May 25 17:07:24 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.48.nmap 10.10.10.48
+Nmap scan report for 10.10.10.48
+Host is up (0.15s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+53/tcp   open  domain
+80/tcp   open  http
+1862/tcp open  mysql-cm-agent
+
+# Nmap done at Mon May 25 17:07:38 2020 -- 1 IP address (1 host up) scanned in 13.84 seconds

@@ -1,0 +1,134 @@
+# Nmap 7.80 scan initiated Mon May 25 17:20:42 2020 as: nmap -Pn -sV --script vuln -p22,53,80,1862,32400,32469, -oN nmap/Vulns_10.10.10.48.nmap 10.10.10.48
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.48
+Host is up (0.14s latency).
+
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u3 (protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+53/tcp    open  domain  dnsmasq 2.76
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:thekelleys:dnsmasq:2.76: 
+|_    	CVE-2019-14834	4.3	https://vulners.com/cve/CVE-2019-14834
+80/tcp    open  http    lighttpd 1.4.35
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: lighttpd/1.4.35
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| vulners: 
+|   cpe:/a:lighttpd:lighttpd:1.4.35: 
+|_    	CVE-2018-19052	5.0	https://vulners.com/cve/CVE-2018-19052
+1862/tcp  open  upnp    Platinum UPnP 1.0.5.13 (UPnP/1.0 DLNADOC/1.50)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+32400/tcp open  http    Plex Media Server httpd
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| http-cross-domain-policy: 
+|   VULNERABLE:
+|   Cross-domain and Client Access policies.
+|     State: VULNERABLE
+|       A cross-domain policy file specifies the permissions that a web client such as Java, Adobe Flash, Adobe Reader,
+|       etc. use to access data across different domains. A client acces policy file is similar to cross-domain policy
+|       but is used for M$ Silverlight applications. Overly permissive configurations enables Cross-site Request
+|       Forgery attacks, and may allow third parties to access sensitive data meant for the user.
+|     Check results:
+|       /crossdomain.xml:
+|         <?xml version="1.0"?>
+|         <!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+|         <cross-domain-policy>
+|           <site-control permitted-cross-domain-policies="all"/>
+|           <allow-access-from domain="*" secure="false"/>
+|           <allow-http-request-headers-from domain="*" headers="SOAPAction,Content-Type"/>
+|         </cross-domain-policy>
+|       /clientaccesspolicy.xml:
+|         <?xml version="1.0" encoding="utf-8"?>
+|         <access-policy>
+|           <cross-domain-access>
+|             <policy>
+|               <allow-from http-request-headers="*">
+|                 <domain uri="*"/>
+|               </allow-from>
+|               <grant-to>
+|                 <resource path="/" include-subpaths="true"/>
+|               </grant-to>
+|             </policy>
+|           </cross-domain-access>
+|         </access-policy>
+|     Extra information:
+|       Trusted domains:*, *, *
+|   
+|     References:
+|       https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html
+|       https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/CrossDomain_PolicyFile_Specification.pdf
+|       http://acunetix.com/vulnerabilities/web/insecure-clientaccesspolicy-xml-file
+|       http://gursevkalra.blogspot.com/2013/08/bypassing-same-origin-policy-with-flash.html
+|       http://sethsec.blogspot.com/2014/03/exploiting-misconfigured-crossdomainxml.html
+|_      https://www.owasp.org/index.php/Test_RIA_cross_domain_policy_%28OTG-CONFIG-008%29
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /weblog/: Blog
+|   /weblogs/: Blog
+|   /websvn/: WEBSVN Repository
+|   /webedition/: Web Edition
+|   /manager/: Possible admin folder
+|   /webadmin/: Possible admin folder
+|   /webadmin.html: Possible admin folder
+|   /webadmin.php: Possible admin folder
+|   /webadmin.cfm: Possible admin folder
+|   /webadmin.asp: Possible admin folder
+|   /webadmin.aspx: Possible admin folder
+|   /webadmin.jsp: Possible admin folder
+|   /clientaccesspolicy.xml: Microsoft Silverlight crossdomain policy
+|   /webmail/: Mail folder
+|   /crossdomain.xml: Adobe Flash crossdomain policy
+|   /websql/: phpMyAdmin
+|   /webadmin.nsf: Lotus Domino
+|   /web.nsf: Lotus Domino
+|   /weblink_cat_list.php: WHMCompleteSolution CMS
+|   /management/: Potentially interesting folder
+|   /security/: Potentially interesting folder
+|   /web800fo/: Potentially interesting folder
+|   /webaccess/: Potentially interesting folder
+|   /webadmin/: Potentially interesting folder
+|   /webAdmin/: Potentially interesting folder
+|   /webalizer/: Potentially interesting folder
+|   /webapps/: Potentially interesting folder
+|   /webboard/: Potentially interesting folder
+|   /webcart/: Potentially interesting folder
+|   /webcart-lite/: Potentially interesting folder
+|   /webcgi/: Potentially interesting folder
+|   /webdata/: Potentially interesting folder
+|   /webdav/: Potentially interesting folder
+|   /webdb/: Potentially interesting folder
+|   /webDB/: Potentially interesting folder
+|   /webimages2/: Potentially interesting folder
+|   /webimages/: Potentially interesting folder
+|   /web-inf/: Potentially interesting folder
+|   /webmaster/: Potentially interesting folder
+|   /webmaster_logs/: Potentially interesting folder
+|   /webMathematica/: Potentially interesting folder
+|   /webpub/: Potentially interesting folder
+|   /webpub-ui/: Potentially interesting folder
+|   /webreports/: Potentially interesting folder
+|   /webreps/: Potentially interesting folder
+|   /webshare/: Potentially interesting folder
+|   /website/: Potentially interesting folder
+|   /webstat/: Potentially interesting folder
+|   /webstats/: Potentially interesting folder
+|   /webtrace/: Potentially interesting folder
+|   /webtrends/: Potentially interesting folder
+|_  /web_usage/: Potentially interesting folder
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+32469/tcp open  upnp    Platinum UPnP 1.0.5.13 (UPnP/1.0 DLNADOC/1.50)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 17:32:25 2020 -- 1 IP address (1 host up) scanned in 702.91 seconds
