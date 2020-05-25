@@ -1,0 +1,63 @@
+# Nmap 7.80 scan initiated Mon May 25 14:00:39 2020 as: nmap -Pn -sV --script vuln -p22,80 -oN nmap/Vulns_10.10.10.146.nmap 10.10.10.146
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.146
+Host is up (0.13s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.4 (protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:openbsd:openssh:7.4: 
+|     	CVE-2018-15919	5.0	https://vulners.com/cve/CVE-2018-15919
+|_    	CVE-2017-15906	5.0	https://vulners.com/cve/CVE-2017-15906
+80/tcp open  http    Apache httpd 2.4.6 ((CentOS) PHP/5.4.16)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /backup/: Backup folder w/ directory listing
+|   /icons/: Potentially interesting folder w/ directory listing
+|_  /uploads/: Potentially interesting folder
+|_http-server-header: Apache/2.4.6 (CentOS) PHP/5.4.16
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-trace: TRACE is enabled
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.6: 
+|     	CVE-2017-7679	7.5	https://vulners.com/cve/CVE-2017-7679
+|     	CVE-2018-1312	6.8	https://vulners.com/cve/CVE-2018-1312
+|     	CVE-2017-15715	6.8	https://vulners.com/cve/CVE-2017-15715
+|     	CVE-2014-0226	6.8	https://vulners.com/cve/CVE-2014-0226
+|     	CVE-2017-9788	6.4	https://vulners.com/cve/CVE-2017-9788
+|     	CVE-2019-0217	6.0	https://vulners.com/cve/CVE-2019-0217
+|     	CVE-2020-1927	5.8	https://vulners.com/cve/CVE-2020-1927
+|     	CVE-2019-10098	5.8	https://vulners.com/cve/CVE-2019-10098
+|     	CVE-2020-1934	5.0	https://vulners.com/cve/CVE-2020-1934
+|     	CVE-2019-0220	5.0	https://vulners.com/cve/CVE-2019-0220
+|     	CVE-2018-17199	5.0	https://vulners.com/cve/CVE-2018-17199
+|     	CVE-2017-9798	5.0	https://vulners.com/cve/CVE-2017-9798
+|     	CVE-2017-15710	5.0	https://vulners.com/cve/CVE-2017-15710
+|     	CVE-2016-8743	5.0	https://vulners.com/cve/CVE-2016-8743
+|     	CVE-2016-2161	5.0	https://vulners.com/cve/CVE-2016-2161
+|     	CVE-2016-0736	5.0	https://vulners.com/cve/CVE-2016-0736
+|     	CVE-2014-3523	5.0	https://vulners.com/cve/CVE-2014-3523
+|     	CVE-2014-0231	5.0	https://vulners.com/cve/CVE-2014-0231
+|     	CVE-2014-0098	5.0	https://vulners.com/cve/CVE-2014-0098
+|     	CVE-2013-6438	5.0	https://vulners.com/cve/CVE-2013-6438
+|     	CVE-2019-10092	4.3	https://vulners.com/cve/CVE-2019-10092
+|     	CVE-2016-4975	4.3	https://vulners.com/cve/CVE-2016-4975
+|     	CVE-2015-3185	4.3	https://vulners.com/cve/CVE-2015-3185
+|     	CVE-2014-8109	4.3	https://vulners.com/cve/CVE-2014-8109
+|     	CVE-2014-0118	4.3	https://vulners.com/cve/CVE-2014-0118
+|     	CVE-2014-0117	4.3	https://vulners.com/cve/CVE-2014-0117
+|     	CVE-2013-4352	4.3	https://vulners.com/cve/CVE-2013-4352
+|     	CVE-2018-1283	3.5	https://vulners.com/cve/CVE-2018-1283
+|_    	CVE-2016-8612	3.3	https://vulners.com/cve/CVE-2016-8612
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 14:01:56 2020 -- 1 IP address (1 host up) scanned in 77.19 seconds
