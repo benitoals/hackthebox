@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Mon May 25 17:59:42 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.6.nmap 10.10.10.6
+Nmap scan report for 10.10.10.6
+Host is up (0.16s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Mon May 25 17:59:55 2020 -- 1 IP address (1 host up) scanned in 13.44 seconds

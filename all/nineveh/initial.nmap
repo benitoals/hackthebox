@@ -1,6 +1,6 @@
-# Nmap 7.80 scan initiated Thu May 21 15:28:43 2020 as: nmap -sC -sV -O -oA initial 10.10.10.43
+# Nmap 7.80 scan initiated Wed May 20 22:18:05 2020 as: nmap -sC -sV -O -oA initial 10.10.10.43
 Nmap scan report for 10.10.10.43
-Host is up (0.14s latency).
+Host is up (0.15s latency).
 Not shown: 998 filtered ports
 PORT    STATE SERVICE  VERSION
 80/tcp  open  http     Apache httpd 2.4.18 ((Ubuntu))
@@ -16,8 +16,8 @@ PORT    STATE SERVICE  VERSION
 | tls-alpn: 
 |_  http/1.1
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
-Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.12 (92%), Linux 3.13 (92%), Linux 3.13 or 4.2 (92%), Linux 3.16 (92%), Linux 3.16 - 4.6 (92%), Linux 3.18 (92%), Linux 3.2 - 4.9 (92%), Linux 3.8 - 3.11 (92%), Linux 4.2 (92%)
+Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.12 (92%), Linux 3.13 (92%), Linux 3.13 or 4.2 (92%), Linux 3.16 (92%), Linux 3.16 - 4.6 (92%), Linux 3.2 - 4.9 (92%), Linux 3.8 - 3.11 (92%), Linux 4.2 (92%), Linux 4.4 (92%)
 No exact OS matches for host (test conditions non-ideal).
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Thu May 21 15:29:32 2020 -- 1 IP address (1 host up) scanned in 49.06 seconds
+# Nmap done at Wed May 20 22:18:59 2020 -- 1 IP address (1 host up) scanned in 53.86 seconds
