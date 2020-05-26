@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Mon May 18 14:56:37 2020 as: nmap -sC -sV -O -oA initial 10.10.10.17
+Host: 10.10.10.17 ()	Status: Up
+Host: 10.10.10.17 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)/, 25/open/tcp//smtp//Postfix smtpd/, 110/open/tcp//pop3//Dovecot pop3d/, 143/open/tcp//imap//Dovecot imapd/, 443/open/tcp//ssl|http//nginx 1.10.0 (Ubuntu)/	Ignored State: filtered (995)	Seq Index: 254	IP ID Seq: All zeros
+# Nmap done at Mon May 18 14:57:36 2020 -- 1 IP address (1 host up) scanned in 58.66 seconds
