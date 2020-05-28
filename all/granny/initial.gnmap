@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Thu May 28 14:43:28 2020 as: nmap -sC -sV -O -oA initial 10.10.10.15
+Host: 10.10.10.15 ()	Status: Up
+Host: 10.10.10.15 ()	Ports: 80/open/tcp//http//Microsoft IIS httpd 6.0/	Ignored State: filtered (999)	Seq Index: 253	IP ID Seq: Incremental
+# Nmap done at Thu May 28 14:43:57 2020 -- 1 IP address (1 host up) scanned in 28.91 seconds
