@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Wed May 27 18:20:46 2020 as: nmap -sC -sV -O -oA initial 10.10.10.8
+Host: 10.10.10.8 ()	Status: Up
+Host: 10.10.10.8 ()	Ports: 80/open/tcp//http//HttpFileServer httpd 2.3/	Ignored State: filtered (999)	Seq Index: 257	IP ID Seq: Incremental
+# Nmap done at Wed May 27 18:21:32 2020 -- 1 IP address (1 host up) scanned in 46.55 seconds

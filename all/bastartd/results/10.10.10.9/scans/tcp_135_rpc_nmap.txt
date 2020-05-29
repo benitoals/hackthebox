@@ -1,0 +1,12 @@
+# Nmap 7.80 scan initiated Fri May 29 16:43:27 2020 as: nmap -vv --reason -Pn -sV -p 135 --script=banner,msrpc-enum,rpc-grind,rpcinfo -oN /root/app/hackthebox/all/bastartd/results/10.10.10.9/scans/tcp_135_rpc_nmap.txt -oX /root/app/hackthebox/all/bastartd/results/10.10.10.9/scans/xml/tcp_135_rpc_nmap.xml 10.10.10.9
+Nmap scan report for 10.10.10.9
+Host is up, received user-set (0.21s latency).
+Scanned at 2020-05-29 16:43:41 -03 for 22s
+
+PORT    STATE SERVICE REASON          VERSION
+135/tcp open  msrpc   syn-ack ttl 127 Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri May 29 16:44:03 2020 -- 1 IP address (1 host up) scanned in 36.96 seconds
