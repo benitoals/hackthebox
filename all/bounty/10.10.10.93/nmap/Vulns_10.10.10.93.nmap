@@ -1,0 +1,21 @@
+# Nmap 7.80 scan initiated Sun May 31 12:44:55 2020 as: nmap -Pn -sV --script vuln -p80 -oN nmap/Vulns_10.10.10.93.nmap 10.10.10.93
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.93
+Host is up (0.14s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Microsoft IIS httpd 7.5
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Microsoft-IIS/7.5
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun May 31 12:52:11 2020 -- 1 IP address (1 host up) scanned in 435.89 seconds
