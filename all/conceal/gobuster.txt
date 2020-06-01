@@ -1,0 +1,2 @@
+/upload (Status: 301)
+/Upload (Status: 301)
