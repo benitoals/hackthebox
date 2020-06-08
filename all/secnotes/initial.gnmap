@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Mon Jun  8 14:06:09 2020 as: nmap -sC -sV -O -oA initial 10.10.10.97
+Host: 10.10.10.97 ()	Status: Up
+Host: 10.10.10.97 ()	Ports: 80/open/tcp//http//Microsoft IIS httpd 10.0/, 445/open/tcp//microsoft-ds//Windows 10 Enterprise 17134 microsoft-ds (workgroup: HTB)/	Ignored State: filtered (998)	Seq Index: 254	IP ID Seq: Incremental
+# Nmap done at Mon Jun  8 14:07:25 2020 -- 1 IP address (1 host up) scanned in 76.29 seconds
