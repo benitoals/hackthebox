@@ -1,0 +1,18 @@
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.10.10.184
++ Target Hostname:    10.10.10.184
++ Target Port:        8443
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /CN=localhost
+                   Ciphers:  AES256-GCM-SHA384
+                   Issuer:   /CN=localhost
++ Start Time:         2020-06-08 12:19:58 (GMT-3)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The site uses SSL and the Strict-Transport-Security HTTP header is not defined.
++ The site uses SSL and Expect-CT header is not present.
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Root page / redirects to: /index.html
