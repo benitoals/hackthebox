@@ -1,0 +1,76 @@
+# Nmap 7.80 scan initiated Mon Jun  8 07:28:39 2020 as: nmap -Pn -sV --script vuln -p53,88,135,139,389,445,464,593,636,3268,3269,49152,49153,49154,49155,49157,49158,5722,9389,47001,49169,49171,49182, -oN nmap/Vulns_10.10.10.100.nmap 10.10.10.100
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for active.htb (10.10.10.100)
+Host is up (0.15s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2020-06-08 10:31:22Z)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+135/tcp   open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+445/tcp   open  microsoft-ds?
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+464/tcp   open  kpasswd5?
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+636/tcp   open  tcpwrapped
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+|_sslv2-drown: 
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+3269/tcp  open  tcpwrapped
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+|_sslv2-drown: 
+5722/tcp  open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+9389/tcp  open  mc-nmf        .NET Message Framing
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+49152/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49153/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49154/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49155/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49158/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49169/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49171/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49182/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jun  8 07:42:23 2020 -- 1 IP address (1 host up) scanned in 824.18 seconds
