@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Wed Jun  3 14:06:49 2020 as: nmap -Pn -sCV -p5985,9389,47001,49664,49665,49666,49667,49671,49676,49677,49684,49706,49906 -oN nmap/Full_10.10.10.161.nmap 10.10.10.161
+Nmap scan report for 10.10.10.161
+Host is up (0.18s latency).
+
+PORT      STATE SERVICE    VERSION
+5985/tcp  open  http       Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf     .NET Message Framing
+47001/tcp open  http       Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc      Microsoft Windows RPC
+49665/tcp open  msrpc      Microsoft Windows RPC
+49666/tcp open  msrpc      Microsoft Windows RPC
+49667/tcp open  msrpc      Microsoft Windows RPC
+49671/tcp open  msrpc      Microsoft Windows RPC
+49676/tcp open  ncacn_http Microsoft Windows RPC over HTTP 1.0
+49677/tcp open  msrpc      Microsoft Windows RPC
+49684/tcp open  msrpc      Microsoft Windows RPC
+49706/tcp open  msrpc      Microsoft Windows RPC
+49906/tcp open  msrpc      Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun  3 14:07:53 2020 -- 1 IP address (1 host up) scanned in 64.25 seconds

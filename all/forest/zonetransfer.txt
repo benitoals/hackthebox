@@ -1,0 +1,7 @@
+Using domain server:
+Name: 10.10.10.161
+Address: 10.10.10.161#53
+Aliases: 
+
+Host forest.htb not found: 3(NXDOMAIN)
+; Transfer failed.
