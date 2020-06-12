@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Fri Jun 12 15:04:13 2020 as: nmap -Pn -sCV -p6379 -oN nmap/Full_10.10.10.160.nmap 10.10.10.160
+Nmap scan report for 10.10.10.160
+Host is up (0.14s latency).
+
+PORT     STATE SERVICE VERSION
+6379/tcp open  redis   Redis key-value store 4.0.9
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun 12 15:04:32 2020 -- 1 IP address (1 host up) scanned in 18.53 seconds

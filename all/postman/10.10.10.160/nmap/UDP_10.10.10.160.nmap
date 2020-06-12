@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Fri Jun 12 14:55:00 2020 as: nmap -Pn -sCVU --script vulners --script-args mincvss=7.0 -p10000 -oN nmap/UDP_10.10.10.160.nmap 10.10.10.160
+Nmap scan report for 10.10.10.160
+Host is up (0.17s latency).
+
+PORT      STATE SERVICE VERSION
+10000/udp open  webmin  (https on TCP port 10000)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun 12 14:55:13 2020 -- 1 IP address (1 host up) scanned in 12.95 seconds
