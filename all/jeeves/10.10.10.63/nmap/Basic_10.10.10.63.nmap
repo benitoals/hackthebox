@@ -1,0 +1,34 @@
+# Nmap 7.80 scan initiated Sat Jun 13 15:18:32 2020 as: nmap -Pn -sCV -p80,135,445,50000 -oN nmap/Basic_10.10.10.63.nmap 10.10.10.63
+Nmap scan report for 10.10.10.63
+Host is up (0.39s latency).
+
+PORT      STATE SERVICE      VERSION
+80/tcp    open  http         Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Ask Jeeves
+135/tcp   open  msrpc        Microsoft Windows RPC
+445/tcp   open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+50000/tcp open  http         Jetty 9.4.z-SNAPSHOT
+|_http-server-header: Jetty(9.4.z-SNAPSHOT)
+|_http-title: Error 404 Not Found
+Service Info: Host: JEEVES; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 5h02m03s, deviation: 0s, median: 5h02m03s
+|_smb-os-discovery: ERROR: Script execution failed (use -d to debug)
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2020-06-13T23:21:01
+|_  start_date: 2020-06-13T23:19:13
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Jun 13 15:19:35 2020 -- 1 IP address (1 host up) scanned in 63.68 seconds
