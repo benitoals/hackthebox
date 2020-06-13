@@ -1,0 +1,14 @@
+POST /simple_chat/login.php HTTP/1.1
+Host: internal-01.bart.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://internal-01.bart.htb/simple_chat/login_form.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 38
+Connection: close
+Cookie: PHPSESSID=i02tfljqor6325g41k7841cj6c
+Upgrade-Insecure-Requests: 1
+
+uname=harvey&passwd=password&submit=Login
