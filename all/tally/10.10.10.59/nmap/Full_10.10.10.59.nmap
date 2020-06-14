@@ -1,0 +1,54 @@
+# Nmap 7.80 scan initiated Sun Jun 14 07:35:24 2020 as: nmap -Pn -sCV -p5985,15567,32843,32844,32846,47001,49664,49665,49666,49667,49668,49669,49670 -oN nmap/Full_10.10.10.59.nmap 10.10.10.59
+Nmap scan report for 10.10.10.59
+Host is up (0.66s latency).
+
+PORT      STATE SERVICE            VERSION
+5985/tcp  open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+15567/tcp open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|   Negotiate
+|_  NTLM
+| http-ntlm-info: 
+|   Target_Name: TALLY
+|   NetBIOS_Domain_Name: TALLY
+|   NetBIOS_Computer_Name: TALLY
+|   DNS_Domain_Name: TALLY
+|   DNS_Computer_Name: TALLY
+|_  Product_Version: 10.0.14393
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Site doesn't have a title.
+32843/tcp open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service Unavailable
+32844/tcp open  ssl/http           Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service Unavailable
+| ssl-cert: Subject: commonName=SharePoint Services/organizationName=Microsoft/countryName=US
+| Subject Alternative Name: DNS:localhost, DNS:tally
+| Not valid before: 2017-09-17T22:51:16
+|_Not valid after:  9999-01-01T00:00:00
+|_ssl-date: 2020-06-14T10:38:56+00:00; +2m04s from scanner time.
+| tls-alpn: 
+|   h2
+|_  http/1.1
+32846/tcp open  storagecraft-image StorageCraft Image Manager
+47001/tcp open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc              Microsoft Windows RPC
+49665/tcp open  msrpc              Microsoft Windows RPC
+49666/tcp open  msrpc              Microsoft Windows RPC
+49667/tcp open  msrpc              Microsoft Windows RPC
+49668/tcp open  msrpc              Microsoft Windows RPC
+49669/tcp open  msrpc              Microsoft Windows RPC
+49670/tcp open  msrpc              Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2m03s, deviation: 0s, median: 2m02s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jun 14 07:36:53 2020 -- 1 IP address (1 host up) scanned in 89.59 seconds

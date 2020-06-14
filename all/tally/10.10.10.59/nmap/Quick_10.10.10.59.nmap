@@ -1,0 +1,17 @@
+# Nmap 7.80 scan initiated Sun Jun 14 07:05:52 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.59.nmap 10.10.10.59
+Warning: 10.10.10.59 giving up on port because retransmission cap hit (1).
+Nmap scan report for 10.10.10.59
+Host is up (0.15s latency).
+Not shown: 712 closed ports, 280 filtered ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+81/tcp   open  hosts2-ns
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+808/tcp  open  ccproxy-http
+1433/tcp open  ms-sql-s
+
+# Nmap done at Sun Jun 14 07:06:29 2020 -- 1 IP address (1 host up) scanned in 36.56 seconds
