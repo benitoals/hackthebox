@@ -1,0 +1,1 @@
+/bin/sh -c /usr/bin/java -jar /opt/h2/bin/h2-1.4.196.jar

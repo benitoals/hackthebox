@@ -1,0 +1,6 @@
+# Nmap 7.80 scan initiated Mon Jun 15 07:09:10 2020 as: nmap -Pn -sU --max-retries 1 --open -oN nmap/UDP_10.10.10.114.nmap 10.10.10.114
+Nmap scan report for 10.10.10.114
+Host is up (0.27s latency).
+All 1000 scanned ports on 10.10.10.114 are open|filtered (998) or closed (2)
+
+# Nmap done at Mon Jun 15 07:10:13 2020 -- 1 IP address (1 host up) scanned in 63.15 seconds

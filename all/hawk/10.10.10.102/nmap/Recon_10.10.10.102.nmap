@@ -1,0 +1,24 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mWeb Servers Recon:
+[0m
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://10.10.10.102:80 -o recon/gobuster_10.10.10.102_80.txt
+nikto -host 10.10.10.102:80 | tee recon/nikto_10.10.10.102_80.txt
+
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://10.10.10.102:8082 -o recon/gobuster_10.10.10.102_8082.txt
+nikto -host 10.10.10.102:8082 | tee recon/nikto_10.10.10.102_8082.txt
+
+[0m
+[0;33mCMS Recon:
+[0m
+droopescan scan drupal -u 10.10.10.102:80 | tee recon/droopescan_10.10.10.102_80.txt
+[0m
+[0;33mSNMP Recon:
+[0m
+snmp-check 10.10.10.102 -c public | tee recon/snmpcheck_10.10.10.102.txt
+snmpwalk -Os -c public -v 10.10.10.102 | tee recon/snmpwalk_10.10.10.102.txt
+
+
+
+
