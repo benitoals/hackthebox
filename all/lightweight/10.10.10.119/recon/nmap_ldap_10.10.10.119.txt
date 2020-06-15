@@ -1,0 +1,8 @@
+# Nmap 7.80 scan initiated Mon Jun 15 17:28:17 2020 as: nmap -Pn -p 389 --script ldap-search --script-args "ldap.username=\"$(cat recon/ldapsearch_10.10.10.119.txt | grep rootDomainNamingContext | cut -d \\ \\ -f2)\"" -oN recon/nmap_ldap_10.10.10.119.txt 10.10.10.119
+Nmap scan report for lightweight.htb (10.10.10.119)
+Host is up (0.15s latency).
+
+PORT    STATE SERVICE
+389/tcp open  ldap
+
+# Nmap done at Mon Jun 15 17:28:19 2020 -- 1 IP address (1 host up) scanned in 1.22 seconds

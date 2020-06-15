@@ -1,0 +1,37 @@
+# Nmap 7.80 scan initiated Mon Jun 15 17:25:49 2020 as: nmap -Pn -sV --script vuln -p22,80,389 -oN nmap/Vulns_10.10.10.119.nmap 10.10.10.119
+Nmap scan report for lightweight.htb (10.10.10.119)
+Host is up (0.15s latency).
+
+PORT    STATE    SERVICE VERSION
+22/tcp  open     ssh     OpenSSH 7.4 (protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:openbsd:openssh:7.4: 
+|     	CVE-2018-15919	5.0	https://vulners.com/cve/CVE-2018-15919
+|_    	CVE-2017-15906	5.0	https://vulners.com/cve/CVE-2017-15906
+80/tcp  filtered http
+389/tcp open     ldap    OpenLDAP 2.2.X - 2.3.X
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+| ssl-poodle: 
+|   VULNERABLE:
+|   SSL POODLE information leak
+|     State: LIKELY VULNERABLE
+|     IDs:  BID:70574  CVE:CVE-2014-3566
+|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other
+|           products, uses nondeterministic CBC padding, which makes it easier
+|           for man-in-the-middle attackers to obtain cleartext data via a
+|           padding-oracle attack, aka the "POODLE" issue.
+|     Disclosure date: 2014-10-14
+|     Check results:
+|       TLS_RSA_WITH_AES_128_CBC_SHA
+|       TLS_FALLBACK_SCSV properly implemented
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566
+|       https://www.imperialviolet.org/2014/10/14/poodle.html
+|       https://www.openssl.org/~bodo/ssl-poodle.pdf
+|_      https://www.securityfocus.com/bid/70574
+|_sslv2-drown: 
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jun 15 17:27:20 2020 -- 1 IP address (1 host up) scanned in 91.31 seconds
