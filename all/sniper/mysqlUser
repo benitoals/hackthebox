@@ -1,0 +1,1 @@
+$con = mysqli_connect("localhost","dbuser","36mEAhz/B8xQ~2VM","sniper");
