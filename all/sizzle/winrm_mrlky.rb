@@ -1,14 +1,27 @@
 require 'winrm'
-opts = { 
-  endpoint: 'http://10.10.10.103:5985/wsman',
-  user: 'mrlky',
-  password: 'Football#7'
-}
-conn = WinRM::Connection.new(opts)
+
+# Author: Alamot
+
+conn = WinRM::Connection.new(
+  endpoint: 'https://10.10.10.103:5986/wsman',
+  transport: :ssl,
+  client_cert: 'mrlky.cer',
+  client_key: 'mrlky.key',
+  key_pass: 'pass',
+  :no_ssl_peer_verification => true
+)
+
+command=""
+
 conn.shell(:powershell) do |shell|
-  output = shell.run('$PSVersionTable') do |stdout, stderr|
-    STDOUT.print stdout
-    STDERR.print stderr
-  end
-  puts "The script exited with exit code #{output.exitcode}"
+    until command == "exit\n" do
+        output = shell.run("-join($id,'PS ',$(whoami),'@',$env:computername,' ',$((gi $pwd).Name),'> ')")
+        print(output.output.chomp)
+        command = gets
+        output = shell.run(command) do |stdout, stderr|
+            STDOUT.print stdout
+            STDERR.print stderr
+        end
+    end
+    puts "Exiting with code #{output.exitcode}"
 end
