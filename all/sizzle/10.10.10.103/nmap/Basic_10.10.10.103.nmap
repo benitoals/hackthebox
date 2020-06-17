@@ -1,0 +1,67 @@
+# Nmap 7.80 scan initiated Wed Jun 17 06:48:27 2020 as: nmap -Pn -sCV -p21,53,80,135,139,389,443,445,464,593,636,3268,3269 -oN nmap/Basic_10.10.10.103.nmap 10.10.10.103
+Nmap scan report for 10.10.10.103
+Host is up (0.14s latency).
+
+PORT     STATE SERVICE       VERSION
+21/tcp   open  ftp           Microsoft ftpd
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|_  SYST: Windows_NT
+53/tcp   open  domain?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+80/tcp   open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Site doesn't have a title (text/html).
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
+| Subject Alternative Name: othername:<unsupported>, DNS:sizzle.HTB.LOCAL
+| Not valid before: 2020-06-17T09:39:43
+|_Not valid after:  2021-06-17T09:39:43
+443/tcp  open  ssl/http      Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Site doesn't have a title (text/html).
+| ssl-cert: Subject: commonName=sizzle.htb.local
+| Not valid before: 2018-07-03T17:58:55
+|_Not valid after:  2020-07-02T17:58:55
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
+| Subject Alternative Name: othername:<unsupported>, DNS:sizzle.HTB.LOCAL
+| Not valid before: 2020-06-17T09:39:43
+|_Not valid after:  2021-06-17T09:39:43
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
+| Subject Alternative Name: othername:<unsupported>, DNS:sizzle.HTB.LOCAL
+| Not valid before: 2020-06-17T09:39:43
+|_Not valid after:  2021-06-17T09:39:43
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
+| Subject Alternative Name: othername:<unsupported>, DNS:sizzle.HTB.LOCAL
+| Not valid before: 2020-06-17T09:39:43
+|_Not valid after:  2021-06-17T09:39:43
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=6/17%Time=5EE9E703%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+Service Info: Host: SIZZLE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: 2m05s
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2020-06-17T09:53:18
+|_  start_date: 2020-06-17T09:48:45
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun 17 06:52:52 2020 -- 1 IP address (1 host up) scanned in 265.37 seconds

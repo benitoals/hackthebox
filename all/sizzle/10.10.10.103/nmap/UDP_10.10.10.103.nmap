@@ -1,0 +1,84 @@
+# Nmap 7.80 scan initiated Wed Jun 17 07:21:32 2020 as: nmap -Pn -sCVU --script vulners --script-args mincvss=7.0 -p53,123,389,51456,51586,51717,53037,53589,54094,54114,54321 -oN nmap/UDP_10.10.10.103.nmap 10.10.10.103
+Nmap scan report for 10.10.10.103
+Host is up (0.15s latency).
+
+PORT      STATE SERVICE VERSION
+53/udp    open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+123/udp   open  ntp     NTP v3
+389/udp   open  ldap    Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+51456/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+51586/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+51717/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+53037/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+53589/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+54094/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+54114/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+54321/udp open  domain  (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   NBTStat: 
+|_    CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+9 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(NBTS
+SF:tat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port51456-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port51586-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port51717-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53037-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53589-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port54094-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port54114-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port54321-UDP:V=7.80%I=7%D=6/17%Time=5EE9EECE%P=x86_64-pc-linux-gnu%r(N
+SF:BTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAA\0\0!\0\x01");
+Service Info: Host: SIZZLE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun 17 07:22:08 2020 -- 1 IP address (1 host up) scanned in 35.72 seconds

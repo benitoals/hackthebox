@@ -1,0 +1,42 @@
+# Nmap 7.80 scan initiated Wed Jun 17 07:29:00 2020 as: nmap -Pn -sCV -p5985,5986,9389,47001,49664,49665,49666,49668,49678,49679,49681,49682,49688,49695,61488,61505 -oN nmap/Full_10.10.10.103.nmap 10.10.10.103
+Nmap scan report for 10.10.10.103
+Host is up (0.37s latency).
+
+PORT      STATE SERVICE    VERSION
+5985/tcp  open  http       Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+5986/tcp  open  ssl/http   Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
+| Subject Alternative Name: othername:<unsupported>, DNS:sizzle.HTB.LOCAL
+| Not valid before: 2020-06-17T09:39:43
+|_Not valid after:  2021-06-17T09:39:43
+|_ssl-date: 2020-06-17T10:32:22+00:00; +2m06s from scanner time.
+| tls-alpn: 
+|   h2
+|_  http/1.1
+9389/tcp  open  mc-nmf     .NET Message Framing
+47001/tcp open  http       Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc      Microsoft Windows RPC
+49665/tcp open  msrpc      Microsoft Windows RPC
+49666/tcp open  msrpc      Microsoft Windows RPC
+49668/tcp open  msrpc      Microsoft Windows RPC
+49678/tcp open  msrpc      Microsoft Windows RPC
+49679/tcp open  ncacn_http Microsoft Windows RPC over HTTP 1.0
+49681/tcp open  msrpc      Microsoft Windows RPC
+49682/tcp open  msrpc      Microsoft Windows RPC
+49688/tcp open  msrpc      Microsoft Windows RPC
+49695/tcp open  msrpc      Microsoft Windows RPC
+61488/tcp open  msrpc      Microsoft Windows RPC
+61505/tcp open  msrpc      Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: 2m05s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun 17 07:30:17 2020 -- 1 IP address (1 host up) scanned in 77.47 seconds

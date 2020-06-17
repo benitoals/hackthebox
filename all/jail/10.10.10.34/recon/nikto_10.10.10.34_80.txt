@@ -1,0 +1,20 @@
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.10.10.34
++ Target Hostname:    10.10.10.34
++ Target Port:        80
++ Start Time:         2020-06-16 18:29:31 (GMT-3)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.6 (CentOS)
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Apache/2.4.6 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.
++ Allowed HTTP Methods: GET, HEAD, POST, OPTIONS, TRACE 
++ OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST
++ OSVDB-3268: /icons/: Directory indexing found.
++ OSVDB-3233: /icons/README: Apache default file found.
++ Scan terminated:  0 error(s) and 8 item(s) reported on remote host
++ End Time:           2020-06-16 19:06:44 (GMT-3) (2233 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

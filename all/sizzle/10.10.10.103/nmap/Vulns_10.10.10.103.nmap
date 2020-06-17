@@ -1,0 +1,125 @@
+# Nmap 7.80 scan initiated Wed Jun 17 07:33:03 2020 as: nmap -Pn -sV --script vuln -p21,53,80,135,139,389,443,445,464,593,636,3268,3269,5985,5986,9389,47001,49664,49665,49666,49668,49678,49679,49681,49682,49688,49695,61488,61505, -oN nmap/Vulns_10.10.10.103.nmap 10.10.10.103
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.103
+Host is up (0.14s latency).
+
+PORT      STATE SERVICE       VERSION
+21/tcp    open  ftp           Microsoft ftpd
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+53/tcp    open  domain?
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Microsoft-IIS/10.0
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+135/tcp   open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+443/tcp   open  ssl/http      Microsoft IIS httpd 10.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_sslv2-drown: 
+445/tcp   open  microsoft-ds?
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+464/tcp   open  kpasswd5?
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_sslv2-drown: 
+9389/tcp  open  mc-nmf        .NET Message Framing
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+49664/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49665/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49666/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49668/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49678/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49679/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49681/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49682/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49688/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49695/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+61488/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+61505/tcp open  msrpc         Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=6/17%Time=5EE9F198%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+Service Info: Host: SIZZLE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun 17 08:28:46 2020 -- 1 IP address (1 host up) scanned in 3343.02 seconds

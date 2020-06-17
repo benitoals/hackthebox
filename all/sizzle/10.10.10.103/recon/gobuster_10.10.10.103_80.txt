@@ -1,0 +1,8 @@
+http://10.10.10.103:80/aspnet_client (Status: 301) [Size: 160]
+http://10.10.10.103:80/certenroll (Status: 301) [Size: 157]
+http://10.10.10.103:80/certsrv (Status: 401) [Size: 1293]
+http://10.10.10.103:80/images (Status: 301) [Size: 153]
+http://10.10.10.103:80/Images (Status: 301) [Size: 153]
+http://10.10.10.103:80/index.html (Status: 200) [Size: 60]
+http://10.10.10.103:80/Index.html (Status: 200) [Size: 60]
+http://10.10.10.103:80/index.html (Status: 200) [Size: 60]

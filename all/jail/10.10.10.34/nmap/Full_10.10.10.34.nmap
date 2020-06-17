@@ -1,0 +1,43 @@
+# Nmap 7.80 scan initiated Tue Jun 16 18:13:18 2020 as: nmap -Pn -sCV -p7411,20048 -oN nmap/Full_10.10.10.34.nmap 10.10.10.34
+Nmap scan report for 10.10.10.34
+Host is up (0.16s latency).
+
+PORT      STATE SERVICE    VERSION
+7411/tcp  open  daqstream?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    OK Ready. Send USER command.
+20048/tcp open  mountd     1-3 (RPC #100005)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port7411-TCP:V=7.80%I=7%D=6/16%Time=5EE93600%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(GenericLines,1D
+SF:,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(GetRequest,1D,"OK\x2
+SF:0Ready\.\x20Send\x20USER\x20command\.\n")%r(HTTPOptions,1D,"OK\x20Ready
+SF:\.\x20Send\x20USER\x20command\.\n")%r(RTSPRequest,1D,"OK\x20Ready\.\x20
+SF:Send\x20USER\x20command\.\n")%r(RPCCheck,1D,"OK\x20Ready\.\x20Send\x20U
+SF:SER\x20command\.\n")%r(DNSVersionBindReqTCP,1D,"OK\x20Ready\.\x20Send\x
+SF:20USER\x20command\.\n")%r(DNSStatusRequestTCP,1D,"OK\x20Ready\.\x20Send
+SF:\x20USER\x20command\.\n")%r(Help,1D,"OK\x20Ready\.\x20Send\x20USER\x20c
+SF:ommand\.\n")%r(SSLSessionReq,1D,"OK\x20Ready\.\x20Send\x20USER\x20comma
+SF:nd\.\n")%r(TerminalServerCookie,1D,"OK\x20Ready\.\x20Send\x20USER\x20co
+SF:mmand\.\n")%r(TLSSessionReq,1D,"OK\x20Ready\.\x20Send\x20USER\x20comman
+SF:d\.\n")%r(Kerberos,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r
+SF:(SMBProgNeg,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(X11Pro
+SF:be,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(FourOhFourReque
+SF:st,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(LPDString,1D,"O
+SF:K\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(LDAPSearchReq,1D,"OK\x2
+SF:0Ready\.\x20Send\x20USER\x20command\.\n")%r(LDAPBindReq,1D,"OK\x20Ready
+SF:\.\x20Send\x20USER\x20command\.\n")%r(SIPOptions,1D,"OK\x20Ready\.\x20S
+SF:end\x20USER\x20command\.\n")%r(LANDesk-RC,1D,"OK\x20Ready\.\x20Send\x20
+SF:USER\x20command\.\n")%r(TerminalServer,1D,"OK\x20Ready\.\x20Send\x20USE
+SF:R\x20command\.\n")%r(NCP,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.
+SF:\n")%r(NotesRPC,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(Ja
+SF:vaRMI,1D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(WMSRequest,1
+SF:D,"OK\x20Ready\.\x20Send\x20USER\x20command\.\n")%r(oracle-tns,1D,"OK\x
+SF:20Ready\.\x20Send\x20USER\x20command\.\n")%r(ms-sql-s,1D,"OK\x20Ready\.
+SF:\x20Send\x20USER\x20command\.\n")%r(afp,1D,"OK\x20Ready\.\x20Send\x20US
+SF:ER\x20command\.\n")%r(giop,1D,"OK\x20Ready\.\x20Send\x20USER\x20command
+SF:\.\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jun 16 18:16:16 2020 -- 1 IP address (1 host up) scanned in 178.90 seconds

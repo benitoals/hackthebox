@@ -1,0 +1,8 @@
+https://10.10.10.103:443/aspnet_client (Status: 301) [Size: 162]
+https://10.10.10.103:443/certenroll (Status: 301) [Size: 159]
+https://10.10.10.103:443/certsrv (Status: 401) [Size: 1293]
+https://10.10.10.103:443/images (Status: 301) [Size: 155]
+https://10.10.10.103:443/Images (Status: 301) [Size: 155]
+https://10.10.10.103:443/Index.html (Status: 200) [Size: 60]
+https://10.10.10.103:443/index.html (Status: 200) [Size: 60]
+https://10.10.10.103:443/index.html (Status: 200) [Size: 60]
